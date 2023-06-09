@@ -36,9 +36,15 @@ namespace Hotel_Management_System_Winforrm
             return Regex.IsMatch(check, "^[a-z A-Z 0-9]{6,24}$");
         }
         public bool checkSdt(string check)
+<<<<<<< HEAD
 {
     return Regex.IsMatch(check, "^[0-9]{10,20}$");
 }
+=======
+        {
+            return Regex.IsMatch(check, "^[0-9]{10,20}$");
+        }
+>>>>>>> 2200a33 (upload)
 
         public bool checkPassword(string check)
         {
@@ -71,6 +77,11 @@ namespace Hotel_Management_System_Winforrm
             }
             if(ql.TaiKhoan("Select * from DangNhap where sdt = '"+sdt+"'").Count() != 0) {
                 MessageBox.Show("Số Điện Thoại Đã Được Đăng Kí Vui Lòng Đăng Kí Số Khác", "Cảnh Báo Đăng Nhập", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!checkSdt(sdt))
+            {
+                MessageBox.Show("Vui Lòng Nhập Đúng Thông Tin Yêu Cầu Dộ Dài  Không Chứa Những Chữ Cái Đặc Biệt", "Cảnh Báo Sai Thông Tin", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;
             }
             tk = new TaiKhoan(tenTk, mk, tenLeTan, sdt, ngaysinh, gioitinh);
