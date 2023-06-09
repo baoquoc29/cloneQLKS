@@ -35,9 +35,11 @@ namespace Hotel_Management_System_Winforrm
         {
             return Regex.IsMatch(check, "^[a-z A-Z 0-9]{6,24}$");
         }
-        public bool checkSdt(string check) {
-            return Regex.IsMatch(check, "{10}$");
-        }
+        public bool checkSdt(string check)
+{
+    return Regex.IsMatch(check, "^[0-9]{10,20}$");
+}
+
         public bool checkPassword(string check)
         {
             return Regex.IsMatch(check, "^[a-zA-Z0-9.!@#$%^&*(),.?\":{}|<> ]{6,24}$");
@@ -52,6 +54,11 @@ namespace Hotel_Management_System_Winforrm
      
             string gioitinh = (rdoFemale.Checked ? rdoFemale.Text : rdoMale.Text);
             string sdt = txtPhone.Text;
+            if (!checkSdt(sdt))
+            {
+                MessageBox.Show("Vui Lòng Nhập Đúng Thông Tin Yêu Cầu Dộ Dài  Không Chứa Những Chữ Cái Đặc Biệt", "Cảnh Báo Sai Thông Tin", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             if (!checkAccount(tenTk) || !checkPassword(mk))
             {
                 MessageBox.Show("Vui Lòng Nhập Đúng Thông Tin Yêu Cầu Dộ Dài 6-24 Kí Tự Và Không Chứa Những Chữ Cái Đặc Biệt", "Cảnh Báo Sai Thông Tin", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
