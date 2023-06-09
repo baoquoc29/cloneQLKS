@@ -75,5 +75,27 @@ namespace Hotel_Management_System_Winforrm
             }
             return true;
         }
+        public bool Update(string password,string tentk,string mkcu)
+        {
+            SqlConnection sqlConnection = Connection.getConnection();
+            string query = "update DangNhap set matkhau = '" + password + "' where taikhoan = '" + tentk + "' and matkhau = '" + mkcu + "' ";
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@matkhau", password);
+                sqlCommand.ExecuteNonQuery();
+
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return true;
+        }
     }
 }

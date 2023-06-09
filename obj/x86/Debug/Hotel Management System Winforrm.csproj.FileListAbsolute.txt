@@ -50,3 +50,4 @@ C:\Users\admin\Documents\213321321\Hotel-Managament-System-master\obj\x86\Debug\
 C:\Users\admin\Documents\213321321\Hotel-Managament-System-master\obj\x86\Debug\Hotel Management System Winforrm.exe
 C:\Users\admin\Documents\213321321\Hotel-Managament-System-master\obj\x86\Debug\Hotel Management System Winforrm.pdb
 C:\Users\admin\Documents\213321321\Hotel-Managament-System-master\obj\x86\Debug\Hotel_Management_System_Winforrm.QuenMatKhau.resources
+C:\Users\admin\Documents\213321321\Hotel-Managament-System-master\obj\x86\Debug\Hotel_Management_System_Winforrm.FrmDoiMatKhau.resources

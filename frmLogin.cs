@@ -68,5 +68,11 @@ namespace Hotel_Management_System_Winforrm
             QuenMatKhau ql = new QuenMatKhau();
             ql.Show();
         }
+
+        private void lbremk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmDoiMatKhau fr = new FrmDoiMatKhau();
+            fr.Show();  
+        }
     }
 }
