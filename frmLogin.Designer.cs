@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lklblSignUp = new System.Windows.Forms.LinkLabel();
@@ -39,10 +40,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.llbUserName = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,6 +66,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Đăng nhập tài khoản của bạn";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Hotel_Management_System_Winforrm.Properties.Resources.icon_user_1;
+            this.pictureBox1.Location = new System.Drawing.Point(259, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(94, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -120,6 +130,7 @@
             this.lklblForgetPassword.TabIndex = 5;
             this.lklblForgetPassword.TabStop = true;
             this.lklblForgetPassword.Text = "Quên mật khẩu?";
+            this.lklblForgetPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklblForgetPassword_LinkClicked);
             // 
             // txtPassword
             // 
@@ -169,16 +180,6 @@
             this.llbUserName.TabIndex = 0;
             this.llbUserName.Text = "Tên người dùng:";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Hotel_Management_System_Winforrm.Properties.Resources.icon_user_1;
-            this.pictureBox1.Location = new System.Drawing.Point(259, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(94, 73);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // FrmLogin
             // 
             this.AcceptButton = this.btnLogin;
@@ -192,9 +193,9 @@
             this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

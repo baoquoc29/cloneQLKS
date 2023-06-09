@@ -34,12 +34,39 @@ namespace Hotel_Management_System_Winforrm
             this.Hide();
             frmSignUp.ShowDialog();
         }
-
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void login()
         {
             HotelManagement hotelManagement = new HotelManagement();
             this.Hide();
             hotelManagement.Show();
+        }
+        QuanLyTaiKhoan qltk  = new QuanLyTaiKhoan();
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string tentk = txtUerName.Text;
+            string mk = txtPassword.Text;
+            if(tentk == String.Empty || mk == String.Empty) {
+                MessageBox.Show("Vui Lòng Nhập Đầy Đủ Thông Tin" , "Cảnh Báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning); return;
+            }
+            else
+            {
+                string query = "select * from DangNhap where taikhoan = '" + tentk + "' and matkhau = '" + mk + "'";
+                if(qltk.TaiKhoan(query).Count !=0) {
+                    MessageBox.Show("Đăng Nhập Thành Công");
+                    login();
+                }
+                else
+                {
+                    MessageBox.Show("Tên tài khoản hoặc mật khẩu không chính xác", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+            }
+            
+        }
+
+        private void lklblForgetPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            QuenMatKhau ql = new QuenMatKhau();
+            ql.Show();
         }
     }
 }

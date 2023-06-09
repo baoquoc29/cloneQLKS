@@ -71,7 +71,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(288, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 32);
+            this.label1.Size = new System.Drawing.Size(234, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đăng ký tài khoản";
             // 
@@ -133,9 +133,12 @@
             this.btnSignUp.TabIndex = 8;
             this.btnSignUp.Text = "Đăng ký";
             this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // dtpBirthDay
             // 
+            this.dtpBirthDay.CustomFormat = "dd/MM/yyyy";
+            this.dtpBirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpBirthDay.Location = new System.Drawing.Point(253, 56);
             this.dtpBirthDay.Name = "dtpBirthDay";
             this.dtpBirthDay.Size = new System.Drawing.Size(302, 30);

@@ -36,7 +36,7 @@ namespace Hotel_Management_System_Winforrm
 
             if(btnPhong.BackColor == Color.Red)
             {
-                MessageBox.Show("Phong dang co nguoi o");
+                MessageBox.Show("Phòng Đang Có Người Thuê", "Cảnh Báo" ,MessageBoxButtons.OKCancel,MessageBoxIcon.Warning);
                 return;
             }
 

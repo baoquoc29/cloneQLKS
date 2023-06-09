@@ -186,6 +186,13 @@
     <Compile Include="QuanLyNhanVien.cs" />
     <Compile Include="QuanLyPhong.cs" />
     <Compile Include="QuanLyTaiKhoan.cs" />
+    <Compile Include="QuenMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuenMatKhau.Designer.cs">
+      <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoan.cs" />
     <Compile Include="ThongTinDatPhong.cs" />
     <Compile Include="ThuePhong.cs" />
     <EmbeddedResource Include="FrmDatPhong.resx">
@@ -240,6 +247,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QuenMatKhau.resx">
+      <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
