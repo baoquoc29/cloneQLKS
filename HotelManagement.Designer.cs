@@ -67,6 +67,7 @@
             this.btnP103 = new System.Windows.Forms.Button();
             this.btnP102 = new System.Windows.Forms.Button();
             this.btnP101 = new System.Windows.Forms.Button();
+            this.thôngTinNhânViênCaTrựcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -76,7 +77,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quảnLýThuêPhòngToolStripMenuItem});
+            this.quảnLýThuêPhòngToolStripMenuItem,
+            this.thôngTinNhânViênCaTrựcToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1225, 28);
@@ -134,7 +136,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(74, 450);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 17);
+            this.label6.Size = new System.Drawing.Size(120, 16);
             this.label6.TabIndex = 33;
             this.label6.Text = "Phòng đang bảo trì";
             // 
@@ -143,7 +145,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(74, 413);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 17);
+            this.label5.Size = new System.Drawing.Size(111, 16);
             this.label5.TabIndex = 32;
             this.label5.Text = "Phòng có người ở";
             // 
@@ -152,7 +154,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(74, 377);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 17);
+            this.label4.Size = new System.Drawing.Size(79, 16);
             this.label4.TabIndex = 31;
             this.label4.Text = "Phòng trống";
             // 
@@ -558,6 +560,13 @@
             this.btnP101.UseVisualStyleBackColor = false;
             this.btnP101.Click += new System.EventHandler(this.đặtPhòngToolStripMenuItem_Click);
             // 
+            // thôngTinNhânViênCaTrựcToolStripMenuItem
+            // 
+            this.thôngTinNhânViênCaTrựcToolStripMenuItem.Name = "thôngTinNhânViênCaTrựcToolStripMenuItem";
+            this.thôngTinNhânViênCaTrựcToolStripMenuItem.Size = new System.Drawing.Size(214, 24);
+            this.thôngTinNhânViênCaTrựcToolStripMenuItem.Text = "Thông Tin Nhân Viên Ca Trực";
+            this.thôngTinNhânViênCaTrựcToolStripMenuItem.Click += new System.EventHandler(this.thôngTinNhânViênCaTrựcToolStripMenuItem_Click);
+            // 
             // HotelManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -619,5 +628,6 @@
         private System.Windows.Forms.Button btnP103;
         private System.Windows.Forms.Button btnP102;
         private System.Windows.Forms.Button btnP101;
+        private System.Windows.Forms.ToolStripMenuItem thôngTinNhânViênCaTrựcToolStripMenuItem;
     }
 }

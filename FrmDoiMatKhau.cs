@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Hotel_Management_System_Winforrm
 {
@@ -17,13 +19,21 @@ namespace Hotel_Management_System_Winforrm
             InitializeComponent();
         }
         QuanLyTaiKhoan tk = new QuanLyTaiKhoan();
+        public bool checkPassword(string check)
+        {
+            return Regex.IsMatch(check, "^[a-zA-Z0-9.!@#$%^&*(),.?\":{}|<> ]{6,24}$");
+        }
         private void btndmk_Click(object sender, EventArgs e)
         {
             string mkcu = txtPasswordOld.Text;  
             string mkmoi = txtPasswordNew.Text;
             string tentk = txtUsername.Text;
             string remk = txtPassWordNewRw.Text;
-            if (tk.TaiKhoan("Select * from DangNhap where taikhoan = '" + tentk + "'").Count() == 0)
+            if (!checkPassword(mkmoi))
+            {
+                MessageBox.Show("Vui Lòng Nhập Đúng Thông Tin Yêu Cầu Dộ Dài 6-24 Kí Tự", "Cảnh Báo Sai Thông Tin", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+                if (tk.TaiKhoan("Select * from DangNhap where taikhoan = '" + tentk + "'").Count() == 0)
             {
                 MessageBox.Show("Tên Tài Khoản Không Tồn Tại Trong Hệ Thống", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;

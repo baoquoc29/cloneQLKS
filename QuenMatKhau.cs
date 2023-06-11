@@ -27,11 +27,11 @@ namespace Hotel_Management_System_Winforrm
             {
                 string query = "select * from DangNhap  where sdt = '" + sdt + "'";
                 if(ql.TaiKhoan(query).Count != 0) {
-                    label3.Text = "Mật Khẩu: " + ql.TaiKhoan(query)[0].Matkhau;
+                    label3.Text = "Tên Tài Khoản: " + ql.TaiKhoan(query)[0].Tentaikhoan + " Mật Khẩu: " + ql.TaiKhoan(query)[0].Matkhau;
                 }
                 else
                 {
-                    MessageBox.Show("Số Điện Thoại Này Không Tồn Tại Trong Hẹ Thống");
+                    MessageBox.Show("Số Điện Thoại Này Không Tồn Tại Trong Hệ Thống");
                 }
             }
         }

@@ -41,6 +41,7 @@ namespace Hotel_Management_System_Winforrm
             hotelManagement.Show();
         }
         QuanLyTaiKhoan qltk  = new QuanLyTaiKhoan();
+        
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string tentk = txtUerName.Text;
@@ -51,8 +52,8 @@ namespace Hotel_Management_System_Winforrm
             else
             {
                 string query = "select * from DangNhap where taikhoan = '" + tentk + "' and matkhau = '" + mk + "'";
-                if(qltk.TaiKhoan(query).Count !=0) {
-                    MessageBox.Show("Đăng Nhập Thành Công");
+                if(qltk.TaiKhoan(query).Count > 0) {
+                    MessageBox.Show("Đăng Nhập Thành Công", "" , MessageBoxButtons.OK,MessageBoxIcon.Question);
                     login();
                 }
                 else
@@ -60,9 +61,10 @@ namespace Hotel_Management_System_Winforrm
                     MessageBox.Show("Tên tài khoản hoặc mật khẩu không chính xác", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 }
             }
+   
             
         }
-
+     
         private void lklblForgetPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             QuenMatKhau ql = new QuenMatKhau();

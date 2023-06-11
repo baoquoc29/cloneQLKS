@@ -194,6 +194,12 @@
     </Compile>
     <Compile Include="TaiKhoan.cs" />
     <Compile Include="ThongTinDatPhong.cs" />
+    <Compile Include="ThongTinNhanVienCaTruc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinNhanVienCaTruc.Designer.cs">
+      <DependentUpon>ThongTinNhanVienCaTruc.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThuePhong.cs" />
     <EmbeddedResource Include="FrmDatPhong.resx">
       <DependentUpon>FrmDatPhong.cs</DependentUpon>
@@ -252,6 +258,9 @@
     </Compile>
     <EmbeddedResource Include="QuenMatKhau.resx">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinNhanVienCaTruc.resx">
+      <DependentUpon>ThongTinNhanVienCaTruc.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

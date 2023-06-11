@@ -372,6 +372,9 @@ namespace Hotel_Management_System_Winforrm
             }
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -98,5 +98,11 @@ namespace Hotel_Management_System_Winforrm
             if (TrangThai(btnP307.Text) == "Co nguoi o") btnP307.BackColor = Color.Red;
             if (TrangThai(btnP308.Text) == "Co nguoi o") btnP308.BackColor = Color.Red;
         }
+
+        private void thôngTinNhânViênCaTrựcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThongTinNhanVienCaTruc tt = new ThongTinNhanVienCaTruc();
+            tt.Show();
+        }
     }
 }

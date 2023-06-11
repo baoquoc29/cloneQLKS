@@ -97,5 +97,44 @@ namespace Hotel_Management_System_Winforrm
             }
             return true;
         }
+        public bool UpdateTK(string password, string name, string gt, string ngaysinh, string taikhoan)
+        {
+            SqlConnection sqlConnection = Connection.getConnection();
+            string query = "UPDATE DangNhap SET Ten = @Ten, gioitinh = @gioitinh, ngaysinh = @ngaysinh, taikhoan = @taikhoan WHERE taikhoan = @taikhoan and  matkhau = '"+password+"' ";
+
+            try
+            {
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@Ten", name);
+                sqlCommand.Parameters.AddWithValue("@gioitinh", gt);
+                sqlCommand.Parameters.AddWithValue("@ngaysinh", ngaysinh);
+                sqlCommand.Parameters.AddWithValue("@taikhoan", taikhoan);
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch 
+            {
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+
+            return true;
+        }
+
+        public DataTable getThongTinNhanVien()
+        {
+            DataTable dt = new DataTable();
+            string query = "select Ten as 'Tên Nhân Viên' ,taikhoan as 'Tài Khoản', ngaysinh as 'Ngày Sinh' , gioitinh as 'Giới Tính'  from DangNhap";
+            using (SqlConnection sqlConnection = Connection.getConnection())
+            {
+                sqlConnection.Open();
+                adapter = new SqlDataAdapter(query, sqlConnection);
+                adapter.Fill(dt);
+                sqlConnection.Close();
+            }
+            return dt;
+        }
     }
 }
