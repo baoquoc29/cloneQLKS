@@ -23,7 +23,7 @@ namespace Hotel_Management_System_Winforrm
         FrmLogin fr = new FrmLogin();
         private void ThongTinNhanVienCaTruc_Load(object sender, EventArgs e)
         {
- 
+            txt_tk.Enabled = false;
                 dataGridView1.DataSource = tk.getThongTinNhanVien();
  
         }

@@ -102,20 +102,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(279, 32);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Location = new System.Drawing.Point(217, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 16);
+            this.label1.Size = new System.Drawing.Size(303, 33);
             this.label1.TabIndex = 7;
             this.label1.Text = "Sửa Thông Tin Nhân Viên";
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button1.Location = new System.Drawing.Point(282, 637);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(153, 38);
             this.button1.TabIndex = 8;
             this.button1.Text = "Chỉnh Sửa Thông Tin";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtName
@@ -244,7 +248,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txt_gt;
         private System.Windows.Forms.Label label2;
@@ -256,5 +259,6 @@
         private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button1;
     }
 }
