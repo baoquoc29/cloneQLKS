@@ -45,9 +45,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(214, 33);
+            this.label1.Location = new System.Drawing.Point(241, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 51);
+            this.label1.Size = new System.Drawing.Size(269, 49);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đổi Mật Khẩu";
             // 
@@ -98,6 +98,7 @@
             // 
             this.txtPasswordOld.Location = new System.Drawing.Point(259, 176);
             this.txtPasswordOld.Name = "txtPasswordOld";
+            this.txtPasswordOld.PasswordChar = '*';
             this.txtPasswordOld.Size = new System.Drawing.Size(273, 22);
             this.txtPasswordOld.TabIndex = 6;
             // 
@@ -105,6 +106,7 @@
             // 
             this.txtPasswordNew.Location = new System.Drawing.Point(259, 259);
             this.txtPasswordNew.Name = "txtPasswordNew";
+            this.txtPasswordNew.PasswordChar = '*';
             this.txtPasswordNew.Size = new System.Drawing.Size(273, 22);
             this.txtPasswordNew.TabIndex = 7;
             // 
@@ -112,6 +114,7 @@
             // 
             this.txtPassWordNewRw.Location = new System.Drawing.Point(259, 334);
             this.txtPassWordNewRw.Name = "txtPassWordNewRw";
+            this.txtPassWordNewRw.PasswordChar = '*';
             this.txtPassWordNewRw.Size = new System.Drawing.Size(273, 22);
             this.txtPassWordNewRw.TabIndex = 8;
             // 
