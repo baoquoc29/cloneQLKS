@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongTinNhanVienCaTruc));
             this.labelname = new System.Windows.Forms.Label();
             this.labelns = new System.Windows.Forms.Label();
             this.labelsdt = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.txt_password = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label6 = new System.Windows.Forms.Label();
+            this.lkLogin = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -89,6 +91,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(18, 21);
             this.dataGridView1.Name = "dataGridView1";
@@ -104,19 +107,19 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(217, 29);
+            this.label1.Location = new System.Drawing.Point(276, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(303, 33);
+            this.label1.Size = new System.Drawing.Size(254, 33);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Sửa Thông Tin Nhân Viên";
+            this.label1.Text = "Thông Tin Nhân Viên";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(282, 637);
+            this.button1.Location = new System.Drawing.Point(303, 632);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 38);
+            this.button1.Size = new System.Drawing.Size(165, 38);
             this.button1.TabIndex = 8;
             this.button1.Text = "Chỉnh Sửa Thông Tin";
             this.button1.UseVisualStyleBackColor = false;
@@ -211,11 +214,20 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "Nhập Mật Khẩu";
             // 
+            // lkLogin
+            // 
+            this.lkLogin.AutoSize = true;
+            this.lkLogin.Location = new System.Drawing.Point(510, 221);
+            this.lkLogin.Name = "lkLogin";
+            this.lkLogin.Size = new System.Drawing.Size(0, 16);
+            this.lkLogin.TabIndex = 21;
+            // 
             // ThongTinNhanVienCaTruc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 713);
+            this.Controls.Add(this.lkLogin);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.label5);
@@ -230,8 +242,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelname);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ThongTinNhanVienCaTruc";
-            this.Text = "ThongTinNhanVienCaTruc";
+            this.Text = "Thông Tin Nhân Viên ";
             this.Load += new System.EventHandler(this.ThongTinNhanVienCaTruc_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -260,5 +273,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.LinkLabel lkLogin;
     }
 }

@@ -9,12 +9,13 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Hotel_Management_System_Winforrm
 {
     public partial class FrmSignUp : Form
     {
         FrmLogin frmLogin;
-        TaiKhoan tk;
+        Account tk;
         public FrmSignUp()
         {
             InitializeComponent();
@@ -36,22 +37,29 @@ namespace Hotel_Management_System_Winforrm
             return Regex.IsMatch(check, "^[a-z A-Z 0-9]{6,24}$");
         }
         public bool checkSdt(string check)
-{
-    return Regex.IsMatch(check, "^[0-9]{0,10}$");
-}
+        {
+            return Regex.IsMatch(check, "^[0-9]{0,10}$");
+        }
 
         public bool checkPassword(string check)
         {
             return Regex.IsMatch(check, "^[a-zA-Z0-9.!@#$%^&*(),.?\":{}|<> ]{6,24}$");
         }
-        QuanLyTaiKhoan ql = new QuanLyTaiKhoan();   
+        QuanLyTaiKhoan ql = new QuanLyTaiKhoan();
+ 
+
+        private void FrmSignUp_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             string tenTk = txtUserName.Text;
             string mk = txtPassword.Text;
             string tenLeTan = txtName.Text;
             DateTime ngaysinh = dtpBirthDay.Value;
-     
+
             string gioitinh = (rdoFemale.Checked ? rdoFemale.Text : rdoMale.Text);
             string sdt = txtPhone.Text;
             if (!checkPassword(mk))
@@ -61,7 +69,7 @@ namespace Hotel_Management_System_Winforrm
             }
             if (!checkSdt(sdt))
             {
-                MessageBox.Show("Vui Lòng Nhập Đúng Thông Tin Yêu Cầu Dộ Dài  Không Chứa Những Chữ Cái Đặc Biệt", "Cảnh Báo Sai Thông Tin", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui Lòng Nhập Đúng Thông Tin Yêu Cầu Dộ Dài Và Không Chứa Những Chữ Cái Đặc Biệt", "Cảnh Báo Sai Thông Tin", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;
             }
             if (!checkAccount(tenTk))
@@ -69,12 +77,13 @@ namespace Hotel_Management_System_Winforrm
                 MessageBox.Show("Vui Lòng Nhập Đúng Thông Tin Yêu Cầu Dộ Dài 6-24 Kí Tự Và Không Chứa Những Chữ Cái Đặc Biệt", "Cảnh Báo Sai Thông Tin", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;
             }
-            if(txtConfirmPassword.Text != mk)
+            if (txtConfirmPassword.Text != mk)
             {
-                MessageBox.Show("Vui Lòng Nhập Đúng Mật Khẩu");
+                MessageBox.Show("Vui Lòng Nhập Đúng Mật Khẩu", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
             }
-            if(ql.TaiKhoan("Select * from DangNhap where sdt = '"+sdt+"'").Count() != 0) {
+            if (ql.Account("Select * from DangNhap where sdt = '" + sdt + "'").Count() != 0)
+            {
                 MessageBox.Show("Số Điện Thoại Đã Được Đăng Kí Vui Lòng Đăng Kí Số Khác", "Cảnh Báo Đăng Nhập", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;
             }
@@ -83,7 +92,7 @@ namespace Hotel_Management_System_Winforrm
                 MessageBox.Show("Vui Lòng Nhập Đúng Thông Tin Yêu Cầu Dộ Dài  Không Chứa Những Chữ Cái Đặc Biệt", "Cảnh Báo Sai Thông Tin", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;
             }
-            tk = new TaiKhoan(tenTk, mk, tenLeTan, sdt, ngaysinh, gioitinh);
+            tk = new Account(tenTk, mk, tenLeTan, sdt, ngaysinh, gioitinh);
             if (ql.insert(tk))
             {
                 MessageBox.Show("Thành Công");
@@ -92,7 +101,7 @@ namespace Hotel_Management_System_Winforrm
             {
                 MessageBox.Show("Thất Bại");
             }
-            
+
         }
     }
 }

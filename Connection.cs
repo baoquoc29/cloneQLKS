@@ -9,7 +9,7 @@ namespace Hotel_Management_System_Winforrm
 {
     class Connection
     {
-        private static string connection = @"Data Source=LAPTOP-9N17HVBV\SQLEXPRESS01;Initial Catalog=QLKS;Integrated Security=True";
+        private static string connection = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
     
         public static SqlConnection getConnection()
         {

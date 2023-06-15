@@ -15,7 +15,7 @@ namespace Hotel_Management_System_Winforrm
 
         public DataTable thongTinNguoiThuePhong(string tenphong)
         {
-            string query = "select phong as 'Phòng' , loaiphong as 'Loại Phòng' , tenkhachhang as 'Tên Khách Hàng' , ngaysinh as 'Ngày Sinh' , gioitinh as 'Giới Tính' , sodienthoai as 'Số điện Thoại' , cmnd as 'CMND' , songuoio as 'Số người ở' , quoctich as 'Quốc Tịch' , ngayden as 'Ngày Đến' , ngaydi as 'Ngày Đi', tienphaitra as 'Tiền Phải Trả' from datphong where phong = '" + tenphong + "'";
+            string query = "select * from datphong where phong = '" + tenphong + "'";
             using(SqlConnection sqlConnection = Connection.getConnection())
             {
                 sqlConnection.Open();
@@ -29,7 +29,7 @@ namespace Hotel_Management_System_Winforrm
 
         public DataTable thongTinThuePhong(string tenphong)
         {
-            string query = "select phong as 'Phòng' , loaiphong as 'Loại Phòng' , tenkhachhang as 'Tên Khách Hàng' , ngaysinh as 'Ngày Sinh' , gioitinh as 'Giới Tính' , sodienthoai as 'Số điện Thoại' , cmnd as 'CMND' , songuoio as 'Số người ở' , quoctich as 'Quốc Tịch' , ngayden as 'Ngày Đến' , ngaydi as 'Ngày Đi', tienphaitra as 'Số Tiền' from datphong where phong = '" + tenphong + "'";
+            string query = "select * from thuephong where phong = '" + tenphong + "'";
             using (SqlConnection sqlConnection = Connection.getConnection())
             {
                 sqlConnection.Open();

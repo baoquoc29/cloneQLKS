@@ -30,6 +30,37 @@ namespace Hotel_Management_System_Winforrm
 
         public string Trangthai { get => trangthai; set => trangthai = value; }
 
+        private void caiDatTrangThai(string tt)
+        {
+            switch(tt)
+            {
+                case "Mac dinh":
+                    txtTenKhach_ThuePhong.Enabled = true;
+                    txtSDT_ThuePhong.Enabled = true;
+                    txtCMND_ThuePhong.Enabled = true;
+                    txtSoNguoiO_ThuePhong.Enabled = true;
+                    dtpNgaySinh_ThuePhong.Enabled = true;
+                    dtpNguoiDi_ThuePhong.Enabled = true;
+                    dtpNgayDen_ThuePhong.Enabled = true;
+                    cboQuocTich_ThuePhong.Enabled = true;
+                    break;
+
+                case "Tim Kiem":
+                    txtTenKhach_ThuePhong.Enabled = false;
+                    txtSDT_ThuePhong.Enabled = false;
+                    txtCMND_ThuePhong.Enabled = false;
+                    txtSoNguoiO_ThuePhong.Enabled = false;
+                    dtpNgaySinh_ThuePhong.Enabled = false;
+                    dtpNguoiDi_ThuePhong.Enabled = false;
+                    dtpNgayDen_ThuePhong.Enabled = false;
+                    cboQuocTich_ThuePhong.Enabled = false;
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
         private bool KiemTraThongTin()
         {
             return !String.IsNullOrEmpty(txtTenKhach_ThuePhong.Text) && !String.IsNullOrEmpty(txtSDT_ThuePhong.Text)
@@ -47,7 +78,7 @@ namespace Hotel_Management_System_Winforrm
             dtpNgaySinh_ThuePhong.Value = DateTime.Now;
             dtpNgayDen_ThuePhong.Value = DateTime.Now;
             dtpNguoiDi_ThuePhong.Value = DateTime.Now;
-            txtSoNguoiO_ThuePhong.Text = "0";
+            txtSoNguoiO_ThuePhong.Text = "1";
             txtCMND_ThuePhong.Text = "";
             txtTienPhaiTra_ThuePhong.Text = txtGiaPhong_ThuePhong.Text;
             try
@@ -108,7 +139,7 @@ namespace Hotel_Management_System_Winforrm
                 if (songuoio[i] < '0' || songuoio[i] > '9')
                     return false;
             }
-            return Convert.ToInt32(songuoio) > 0 && Convert.ToInt32(songuoio) <= songuoitoida;
+            return Convert.ToInt32(songuoio) >= 1 && Convert.ToInt32(songuoio) <= songuoitoida;
         }
 
         private void txtSDT_ThuePhong_TextChanged(object sender, EventArgs e)
@@ -130,6 +161,8 @@ namespace Hotel_Management_System_Winforrm
                 MessageBox.Show("Dien day du cmmd hoac hochieu!");
                 return;
             }
+
+            caiDatTrangThai("Tim Kiem");
 
             try
             {
@@ -169,12 +202,14 @@ namespace Hotel_Management_System_Winforrm
             {
                 MessageBox.Show("Lỗi đặt phòng!");
             }
+            caiDatTrangThai("Mac dinh");
             macdinh();
         }
 
         private void dgvBangPhong_ThuePhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = (DataGridViewRow)dgvBangPhong_ThuePhong.Rows[e.RowIndex];
+            caiDatTrangThai("Tim Kiem");
             if (e.RowIndex >= 0 && e.RowIndex < dgvBangPhong_ThuePhong.RowCount - 1)
             {
                 txtTenKhach_ThuePhong.Text = row.Cells[2].Value.ToString();
@@ -203,11 +238,13 @@ namespace Hotel_Management_System_Winforrm
 
         private void btnReset_ThuePhong_Click(object sender, EventArgs e)
         {
+            caiDatTrangThai("Mac dinh");
             macdinh();
         }
 
         private void FrmThuePhong_Load(object sender, EventArgs e)
         {
+            caiDatTrangThai("Mac dinh");
             txtPhong_ThuePhong.Text = tenphong;
             txtLoaiPhong_ThuePhong.Text = qLThuePhong.loaiphong(tenphong);
             giaphong = qLThuePhong.giaphong(tenphong);
@@ -216,6 +253,9 @@ namespace Hotel_Management_System_Winforrm
             macdinh();
         }
 
-       
+        private void btnHuy_ThuePhong_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

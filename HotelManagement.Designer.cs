@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HotelManagement));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.quảnLýThuêPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thôngTinNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -38,12 +40,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnP308 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.đặtPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thuêPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.trảPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bảoTrìToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chuyểnPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnP308 = new System.Windows.Forms.Button();
             this.btnP307 = new System.Windows.Forms.Button();
             this.btnP306 = new System.Windows.Forms.Button();
             this.btnP305 = new System.Windows.Forms.Button();
@@ -67,7 +66,11 @@
             this.btnP103 = new System.Windows.Forms.Button();
             this.btnP102 = new System.Windows.Forms.Button();
             this.btnP101 = new System.Windows.Forms.Button();
-            this.thôngTinNhânViênCaTrựcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đặtPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thuêPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đặtDịchVụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trảPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bảoTrìToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -78,7 +81,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quảnLýThuêPhòngToolStripMenuItem,
-            this.thôngTinNhânViênCaTrựcToolStripMenuItem});
+            this.thôngTinNhânViênToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1225, 28);
@@ -91,8 +94,16 @@
             this.quảnLýThuêPhòngToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
             this.quảnLýThuêPhòngToolStripMenuItem.Text = "Quản lý phòng";
             // 
+            // thôngTinNhânViênToolStripMenuItem
+            // 
+            this.thôngTinNhânViênToolStripMenuItem.Name = "thôngTinNhânViênToolStripMenuItem";
+            this.thôngTinNhânViênToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
+            this.thôngTinNhânViênToolStripMenuItem.Text = "Thông Tin Nhân Viên";
+            this.thôngTinNhânViênToolStripMenuItem.Click += new System.EventHandler(this.thôngTinNhânViênToolStripMenuItem_Click);
+            // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -136,7 +147,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(74, 450);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 16);
+            this.label6.Size = new System.Drawing.Size(129, 17);
             this.label6.TabIndex = 33;
             this.label6.Text = "Phòng đang bảo trì";
             // 
@@ -145,7 +156,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(74, 413);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 16);
+            this.label5.Size = new System.Drawing.Size(119, 17);
             this.label5.TabIndex = 32;
             this.label5.Text = "Phòng có người ở";
             // 
@@ -154,7 +165,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(74, 377);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 16);
+            this.label4.Size = new System.Drawing.Size(86, 17);
             this.label4.TabIndex = 31;
             this.label4.Text = "Phòng trống";
             // 
@@ -182,6 +193,26 @@
             this.label1.Size = new System.Drawing.Size(20, 20);
             this.label1.TabIndex = 28;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.đặtPhòngToolStripMenuItem,
+            this.thuêPhòngToolStripMenuItem,
+            this.đặtDịchVụToolStripMenuItem,
+            this.trảPhòngToolStripMenuItem,
+            this.chuyểnPhòngToolStripMenuItem,
+            this.bảoTrìToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 188);
+            // 
+            // chuyểnPhòngToolStripMenuItem
+            // 
+            this.chuyểnPhòngToolStripMenuItem.Name = "chuyểnPhòngToolStripMenuItem";
+            this.chuyểnPhòngToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.chuyểnPhòngToolStripMenuItem.Text = "Chuyển phòng";
+            this.chuyểnPhòngToolStripMenuItem.Click += new System.EventHandler(this.chuyểnPhòngToolStripMenuItem_Click);
+            // 
             // btnP308
             // 
             this.btnP308.BackColor = System.Drawing.Color.White;
@@ -195,47 +226,6 @@
             this.btnP308.Text = "P308";
             this.btnP308.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnP308.UseVisualStyleBackColor = false;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.đặtPhòngToolStripMenuItem,
-            this.thuêPhòngToolStripMenuItem,
-            this.trảPhòngToolStripMenuItem,
-            this.bảoTrìToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(162, 108);
-            // 
-            // đặtPhòngToolStripMenuItem
-            // 
-            this.đặtPhòngToolStripMenuItem.Image = global::Hotel_Management_System_Winforrm.Properties.Resources.icons8_booking_60;
-            this.đặtPhòngToolStripMenuItem.Name = "đặtPhòngToolStripMenuItem";
-            this.đặtPhòngToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
-            this.đặtPhòngToolStripMenuItem.Text = "Đặt phòng";
-            this.đặtPhòngToolStripMenuItem.Click += new System.EventHandler(this.đặtPhòngToolStripMenuItem_Click);
-            // 
-            // thuêPhòngToolStripMenuItem
-            // 
-            this.thuêPhòngToolStripMenuItem.Image = global::Hotel_Management_System_Winforrm.Properties.Resources.icons8_bedroom_48;
-            this.thuêPhòngToolStripMenuItem.Name = "thuêPhòngToolStripMenuItem";
-            this.thuêPhòngToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
-            this.thuêPhòngToolStripMenuItem.Text = "Thuê phòng";
-            this.thuêPhòngToolStripMenuItem.Click += new System.EventHandler(this.thuêPhòngToolStripMenuItem_Click);
-            // 
-            // trảPhòngToolStripMenuItem
-            // 
-            this.trảPhòngToolStripMenuItem.Image = global::Hotel_Management_System_Winforrm.Properties.Resources.icons8_online_payment_48;
-            this.trảPhòngToolStripMenuItem.Name = "trảPhòngToolStripMenuItem";
-            this.trảPhòngToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
-            this.trảPhòngToolStripMenuItem.Text = "Trả phòng";
-            // 
-            // bảoTrìToolStripMenuItem
-            // 
-            this.bảoTrìToolStripMenuItem.Image = global::Hotel_Management_System_Winforrm.Properties.Resources.icons8_wrench;
-            this.bảoTrìToolStripMenuItem.Name = "bảoTrìToolStripMenuItem";
-            this.bảoTrìToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
-            this.bảoTrìToolStripMenuItem.Text = "Bảo trì";
             // 
             // btnP307
             // 
@@ -560,12 +550,45 @@
             this.btnP101.UseVisualStyleBackColor = false;
             this.btnP101.Click += new System.EventHandler(this.đặtPhòngToolStripMenuItem_Click);
             // 
-            // thôngTinNhânViênCaTrựcToolStripMenuItem
+            // đặtPhòngToolStripMenuItem
             // 
-            this.thôngTinNhânViênCaTrựcToolStripMenuItem.Name = "thôngTinNhânViênCaTrựcToolStripMenuItem";
-            this.thôngTinNhânViênCaTrựcToolStripMenuItem.Size = new System.Drawing.Size(214, 24);
-            this.thôngTinNhânViênCaTrựcToolStripMenuItem.Text = "Thông Tin Nhân Viên Ca Trực";
-            this.thôngTinNhânViênCaTrựcToolStripMenuItem.Click += new System.EventHandler(this.thôngTinNhânViênCaTrựcToolStripMenuItem_Click);
+            this.đặtPhòngToolStripMenuItem.Image = global::Hotel_Management_System_Winforrm.Properties.Resources.icons8_booking_60;
+            this.đặtPhòngToolStripMenuItem.Name = "đặtPhòngToolStripMenuItem";
+            this.đặtPhòngToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.đặtPhòngToolStripMenuItem.Text = "Đặt phòng";
+            this.đặtPhòngToolStripMenuItem.Click += new System.EventHandler(this.đặtPhòngToolStripMenuItem_Click);
+            // 
+            // thuêPhòngToolStripMenuItem
+            // 
+            this.thuêPhòngToolStripMenuItem.Image = global::Hotel_Management_System_Winforrm.Properties.Resources.icons8_bedroom_48;
+            this.thuêPhòngToolStripMenuItem.Name = "thuêPhòngToolStripMenuItem";
+            this.thuêPhòngToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.thuêPhòngToolStripMenuItem.Text = "Thuê phòng";
+            this.thuêPhòngToolStripMenuItem.Click += new System.EventHandler(this.thuêPhòngToolStripMenuItem_Click);
+            // 
+            // đặtDịchVụToolStripMenuItem
+            // 
+            this.đặtDịchVụToolStripMenuItem.Image = global::Hotel_Management_System_Winforrm.Properties.Resources.icons8_food_service_50;
+            this.đặtDịchVụToolStripMenuItem.Name = "đặtDịchVụToolStripMenuItem";
+            this.đặtDịchVụToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.đặtDịchVụToolStripMenuItem.Text = "Đặt dịch vụ";
+            this.đặtDịchVụToolStripMenuItem.Click += new System.EventHandler(this.đặtDịchVụToolStripMenuItem_Click);
+            // 
+            // trảPhòngToolStripMenuItem
+            // 
+            this.trảPhòngToolStripMenuItem.Image = global::Hotel_Management_System_Winforrm.Properties.Resources.icons8_online_payment_48;
+            this.trảPhòngToolStripMenuItem.Name = "trảPhòngToolStripMenuItem";
+            this.trảPhòngToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.trảPhòngToolStripMenuItem.Text = "Trả phòng";
+            this.trảPhòngToolStripMenuItem.Click += new System.EventHandler(this.trảPhòngToolStripMenuItem_Click);
+            // 
+            // bảoTrìToolStripMenuItem
+            // 
+            this.bảoTrìToolStripMenuItem.Image = global::Hotel_Management_System_Winforrm.Properties.Resources.icons8_wrench;
+            this.bảoTrìToolStripMenuItem.Name = "bảoTrìToolStripMenuItem";
+            this.bảoTrìToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.bảoTrìToolStripMenuItem.Text = "Bảo trì";
+            this.bảoTrìToolStripMenuItem.Click += new System.EventHandler(this.bảoTrìToolStripMenuItem_Click);
             // 
             // HotelManagement
             // 
@@ -574,10 +597,11 @@
             this.ClientSize = new System.Drawing.Size(1225, 529);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "HotelManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản Lý Khách Sạn";
+            this.Text = "Hệ Thống Quản Lý Khách Sạn";
             this.Load += new System.EventHandler(this.HotelManagement_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -628,6 +652,8 @@
         private System.Windows.Forms.Button btnP103;
         private System.Windows.Forms.Button btnP102;
         private System.Windows.Forms.Button btnP101;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinNhânViênCaTrựcToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đặtDịchVụToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thôngTinNhânViênToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chuyểnPhòngToolStripMenuItem;
     }
 }

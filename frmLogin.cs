@@ -40,20 +40,22 @@ namespace Hotel_Management_System_Winforrm
             this.Hide();
             hotelManagement.Show();
         }
-        QuanLyTaiKhoan qltk  = new QuanLyTaiKhoan();
-        
+        QuanLyTaiKhoan qltk = new QuanLyTaiKhoan();
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string tentk = txtUerName.Text;
             string mk = txtPassword.Text;
-            if(tentk == String.Empty || mk == String.Empty) {
-                MessageBox.Show("Vui Lòng Nhập Đầy Đủ Thông Tin" , "Cảnh Báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning); return;
+            if (tentk == String.Empty || mk == String.Empty)
+            {
+                MessageBox.Show("Vui Lòng Nhập Đầy Đủ Thông Tin", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning); return;
             }
             else
             {
                 string query = "select * from DangNhap where taikhoan = '" + tentk + "' and matkhau = '" + mk + "'";
-                if(qltk.TaiKhoan(query).Count > 0) {
-                    MessageBox.Show("Đăng Nhập Thành Công", "" , MessageBoxButtons.OK,MessageBoxIcon.Question);
+                if (qltk.Account(query).Count > 0)
+                {
+                    MessageBox.Show("Đăng Nhập Thành Công", "", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     login();
                 }
                 else
@@ -61,20 +63,22 @@ namespace Hotel_Management_System_Winforrm
                     MessageBox.Show("Tên tài khoản hoặc mật khẩu không chính xác", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 }
             }
-   
-            
+
+
         }
-     
+      
+
+
+        private void labelChangePass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmDoiMatKhau fr = new FrmDoiMatKhau();
+            fr.Show();
+        }
+
         private void lklblForgetPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             QuenMatKhau ql = new QuenMatKhau();
             ql.Show();
-        }
-        // doi mat khau
-        private void lbremk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            FrmDoiMatKhau fr = new FrmDoiMatKhau();
-            fr.Show();  
         }
     }
 }

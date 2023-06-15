@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmThuePhong));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -75,6 +76,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.groupBox1);
             this.groupBox4.Controls.Add(this.dgvThuePhong);
@@ -86,7 +88,6 @@
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thuê phòng";
- 
             // 
             // label7
             // 
@@ -608,6 +609,7 @@
             this.btnHuy_ThuePhong.TabIndex = 16;
             this.btnHuy_ThuePhong.Text = "Hủy";
             this.btnHuy_ThuePhong.UseVisualStyleBackColor = true;
+            this.btnHuy_ThuePhong.Click += new System.EventHandler(this.btnHuy_ThuePhong_Click);
             // 
             // btnTimKiem_ThuePhong
             // 
@@ -665,9 +667,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1631, 794);
             this.Controls.Add(this.groupBox4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmThuePhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmThuePhong";
+            this.Text = "Thuê Phòng";
             this.Load += new System.EventHandler(this.FrmThuePhong_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();

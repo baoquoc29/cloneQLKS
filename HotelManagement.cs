@@ -23,6 +23,13 @@ namespace Hotel_Management_System_Winforrm
         private void đặtPhòngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Button btnPhong = contextMenuStrip1.SourceControl as Button;
+
+            if(btnPhong.BackColor == Color.Gray)
+            {
+                MessageBox.Show("Phòng đang bảo trì!");
+                return;
+            }
+
             string tenphong = btnPhong.Text;
             FrmDatPhong frmDatPhong = new FrmDatPhong(tenphong);
             frmDatPhong.Text = tenphong;
@@ -31,12 +38,17 @@ namespace Hotel_Management_System_Winforrm
 
         private void thuêPhòngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HotelManagement_Load(sender, e);
             Button btnPhong = contextMenuStrip1.SourceControl as Button;
 
             if(btnPhong.BackColor == Color.Red)
             {
-                MessageBox.Show("Phòng Đang Có Người Thuê", "Cảnh Báo" ,MessageBoxButtons.OKCancel,MessageBoxIcon.Warning);
+                MessageBox.Show("Phong dang co nguoi o");
+                return;
+            }
+
+            if (btnPhong.BackColor == Color.Gray)
+            {
+                MessageBox.Show("Phòng đang bảo trì!");
                 return;
             }
 
@@ -44,7 +56,6 @@ namespace Hotel_Management_System_Winforrm
             FrmThuePhong frmThuePhong = new FrmThuePhong(tenphong, btnPhong);
             frmThuePhong.Text = tenphong;
             frmThuePhong.Show();
-            HotelManagement_Load(sender, e);
         }
 
         public string TrangThai(string phong)
@@ -71,7 +82,7 @@ namespace Hotel_Management_System_Winforrm
             return trangthai;
         }
 
-        private void HotelManagement_Load(object sender, EventArgs e)
+        private void load()
         {
             if (TrangThai(btnP101.Text) == "Co nguoi o") btnP101.BackColor = Color.Red;
             if (TrangThai(btnP102.Text) == "Co nguoi o") btnP102.BackColor = Color.Red;
@@ -99,10 +110,90 @@ namespace Hotel_Management_System_Winforrm
             if (TrangThai(btnP308.Text) == "Co nguoi o") btnP308.BackColor = Color.Red;
         }
 
-        private void thôngTinNhânViênCaTrựcToolStripMenuItem_Click(object sender, EventArgs e)
+        private void HotelManagement_Load(object sender, EventArgs e)
+        {
+            load();
+        }
+
+        private void đặtDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Button btnPhong = contextMenuStrip1.SourceControl as Button;
+
+            if (btnPhong.BackColor == Color.Gray)
+            {
+                MessageBox.Show("Phòng đang bảo trì!");
+            }
+            else if (btnPhong.BackColor == Color.Red)
+            {
+                string tenphong = btnPhong.Text;
+                FrmThongTinDichVu frmThongTinDichVu = new FrmThongTinDichVu(tenphong);
+                frmThongTinDichVu.Text = tenphong;
+                frmThongTinDichVu.Show();
+            }
+            else
+            {
+                MessageBox.Show("Phòng trống!");
+            }
+        }
+
+        private void trảPhòngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Button btnPhong = contextMenuStrip1.SourceControl as Button;
+            string tenphong = btnPhong.Text;
+            if (btnPhong.BackColor == Color.Gray)
+            {
+                MessageBox.Show("Phòng đang bảo trì!");
+            }
+            else if (btnPhong.BackColor == Color.Red)
+            {
+                FrmTraPhong frmTraPhong = new FrmTraPhong(tenphong, btnPhong);
+                frmTraPhong.Text = tenphong;
+                frmTraPhong.Show();
+            }
+            else
+            {
+                MessageBox.Show("Phong trong!");
+            }
+        }
+
+        private void bảoTrìToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Button btnPhong = contextMenuStrip1.SourceControl as Button;
+
+            if (btnPhong.BackColor == Color.White) {
+                 btnPhong.BackColor = Color.Gray;
+            }
+            else if(btnPhong.BackColor == Color.Gray)
+            {
+                 btnPhong.BackColor = Color.White;
+            }
+            else
+            {
+                MessageBox.Show("Phòng đang có người ở!");
+            }
+        }
+
+        private void thôngTinNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ThongTinNhanVienCaTruc tt = new ThongTinNhanVienCaTruc();
             tt.Show();
+        }
+
+        private void chuyểnPhòngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Button btnPhong = contextMenuStrip1.SourceControl as Button;
+            string tenphong = btnPhong.Text;
+            if(btnPhong.BackColor == Color.Red)
+            {
+                FrmChuyenPhong1 frmChuyenPhong1 = new FrmChuyenPhong1(tenphong, btnPhong);
+                frmChuyenPhong1.Text = tenphong;
+                frmChuyenPhong1.Show();
+                load();
+            }
+            else
+            {
+                MessageBox.Show("Phong trong!");
+            }
         }
     }
 }

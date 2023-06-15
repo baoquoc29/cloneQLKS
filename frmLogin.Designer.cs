@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelChangePass = new System.Windows.Forms.LinkLabel();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lklblSignUp = new System.Windows.Forms.LinkLabel();
             this.lklblForgetPassword = new System.Windows.Forms.LinkLabel();
@@ -40,7 +42,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.llbUserName = new System.Windows.Forms.Label();
-            this.lbremk = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -48,10 +49,10 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(621, 137);
@@ -80,8 +81,9 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.lbremk);
+            this.panel2.Controls.Add(this.labelChangePass);
             this.panel2.Controls.Add(this.btnLogin);
             this.panel2.Controls.Add(this.lklblSignUp);
             this.panel2.Controls.Add(this.lklblForgetPassword);
@@ -90,12 +92,23 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.lblPassword);
             this.panel2.Controls.Add(this.llbUserName);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 137);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(621, 436);
             this.panel2.TabIndex = 1;
+            // 
+            // labelChangePass
+            // 
+            this.labelChangePass.AutoSize = true;
+            this.labelChangePass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelChangePass.Location = new System.Drawing.Point(496, 405);
+            this.labelChangePass.Name = "labelChangePass";
+            this.labelChangePass.Size = new System.Drawing.Size(122, 22);
+            this.labelChangePass.TabIndex = 7;
+            this.labelChangePass.TabStop = true;
+            this.labelChangePass.Text = "Đổi Mật Khẩu";
+            this.labelChangePass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelChangePass_LinkClicked);
             // 
             // btnLogin
             // 
@@ -182,18 +195,6 @@
             this.llbUserName.TabIndex = 0;
             this.llbUserName.Text = "Tên người dùng:";
             // 
-            // lbremk
-            // 
-            this.lbremk.AutoSize = true;
-            this.lbremk.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbremk.Location = new System.Drawing.Point(487, 405);
-            this.lbremk.Name = "lbremk";
-            this.lbremk.Size = new System.Drawing.Size(122, 22);
-            this.lbremk.TabIndex = 7;
-            this.lbremk.TabStop = true;
-            this.lbremk.Text = "Đổi Mật Khẩu";
-            this.lbremk.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbremk_LinkClicked);
-            // 
             // FrmLogin
             // 
             this.AcceptButton = this.btnLogin;
@@ -202,6 +203,7 @@
             this.ClientSize = new System.Drawing.Size(621, 573);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
@@ -228,7 +230,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label llbUserName;
-        private System.Windows.Forms.LinkLabel lbremk;
+        private System.Windows.Forms.LinkLabel labelChangePass;
     }
 }
 

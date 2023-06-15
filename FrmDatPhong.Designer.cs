@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDatPhong));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnReset_DatPhong = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -76,6 +77,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.btnReset_DatPhong);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.btnLuu_DatPhong);
@@ -85,15 +87,14 @@
             this.groupBox1.Controls.Add(this.dgvBangPhong_DatPhong);
             this.groupBox1.Location = new System.Drawing.Point(1, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1183, 712);
+            this.groupBox1.Size = new System.Drawing.Size(1319, 727);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đặt phòng";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnReset_DatPhong
             // 
-            this.btnReset_DatPhong.Location = new System.Drawing.Point(916, 623);
+            this.btnReset_DatPhong.Location = new System.Drawing.Point(1051, 633);
             this.btnReset_DatPhong.Name = "btnReset_DatPhong";
             this.btnReset_DatPhong.Size = new System.Drawing.Size(131, 36);
             this.btnReset_DatPhong.TabIndex = 4;
@@ -133,12 +134,12 @@
             this.groupBox2.Controls.Add(this.dtpNgayDen_DatPhong);
             this.groupBox2.Controls.Add(this.label38);
             this.groupBox2.Controls.Add(this.label39);
-            this.groupBox2.Location = new System.Drawing.Point(11, 349);
+            this.groupBox2.Location = new System.Drawing.Point(146, 359);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(861, 363);
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin khách đặt phòng";
+            this.groupBox2.Text = "Điền thông tin khách đặt phòng";
             // 
             // zzzzz
             // 
@@ -631,7 +632,7 @@
             // 
             // btnLuu_DatPhong
             // 
-            this.btnLuu_DatPhong.Location = new System.Drawing.Point(916, 564);
+            this.btnLuu_DatPhong.Location = new System.Drawing.Point(1051, 574);
             this.btnLuu_DatPhong.Name = "btnLuu_DatPhong";
             this.btnLuu_DatPhong.Size = new System.Drawing.Size(131, 36);
             this.btnLuu_DatPhong.TabIndex = 3;
@@ -641,7 +642,7 @@
             // 
             // btnHuyDat_DatPhong
             // 
-            this.btnHuyDat_DatPhong.Location = new System.Drawing.Point(916, 498);
+            this.btnHuyDat_DatPhong.Location = new System.Drawing.Point(1051, 508);
             this.btnHuyDat_DatPhong.Name = "btnHuyDat_DatPhong";
             this.btnHuyDat_DatPhong.Size = new System.Drawing.Size(131, 36);
             this.btnHuyDat_DatPhong.TabIndex = 2;
@@ -651,7 +652,7 @@
             // 
             // btnSuaThongTin_DatPhong
             // 
-            this.btnSuaThongTin_DatPhong.Location = new System.Drawing.Point(916, 427);
+            this.btnSuaThongTin_DatPhong.Location = new System.Drawing.Point(1051, 437);
             this.btnSuaThongTin_DatPhong.Name = "btnSuaThongTin_DatPhong";
             this.btnSuaThongTin_DatPhong.Size = new System.Drawing.Size(131, 36);
             this.btnSuaThongTin_DatPhong.TabIndex = 1;
@@ -661,7 +662,7 @@
             // 
             // btnDatPhong_DatPhong
             // 
-            this.btnDatPhong_DatPhong.Location = new System.Drawing.Point(916, 364);
+            this.btnDatPhong_DatPhong.Location = new System.Drawing.Point(1051, 374);
             this.btnDatPhong_DatPhong.Name = "btnDatPhong_DatPhong";
             this.btnDatPhong_DatPhong.Size = new System.Drawing.Size(131, 36);
             this.btnDatPhong_DatPhong.TabIndex = 0;
@@ -679,7 +680,7 @@
             this.dgvBangPhong_DatPhong.RowHeadersWidth = 51;
             this.dgvBangPhong_DatPhong.RowTemplate.Height = 24;
             this.dgvBangPhong_DatPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBangPhong_DatPhong.Size = new System.Drawing.Size(1176, 308);
+            this.dgvBangPhong_DatPhong.Size = new System.Drawing.Size(1289, 308);
             this.dgvBangPhong_DatPhong.TabIndex = 5;
             this.dgvBangPhong_DatPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBangPhong_DatPhong_CellClick);
             // 
@@ -688,10 +689,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1190, 751);
+            this.ClientSize = new System.Drawing.Size(1327, 751);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmDatPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Đặt Phòng";
             this.Load += new System.EventHandler(this.FrmDatPhong_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hotel_Management_System_Winforrm
 {
-    class ThuePhong
+    class QuanLyTraPhong
     {
         private string tenphong;
         private string loaiphong;
@@ -19,14 +19,12 @@ namespace Hotel_Management_System_Winforrm
         private string quoctich;
         private DateTime ngayden;
         private DateTime ngaydi;
-        private double tienphaitra;
+        private float tienphong;
 
-        public ThuePhong()
-        {
 
-        } 
+        public QuanLyTraPhong() { }
 
-        public ThuePhong(string tenphong, string loaiphong, string tenkhachhang, DateTime ngaysinh, string gioitinh, string sodienthoai, string cmnd, int songuoio, string quoctich, DateTime ngayden, DateTime ngaydi, double tienphaitra)
+        public QuanLyTraPhong(string tenphong, string loaiphong, string tenkhachhang, DateTime ngaysinh, string gioitinh, string sodienthoai, string cmnd, int songuoio, string quoctich, DateTime ngayden, DateTime ngaydi, float tienphong)
         {
             this.tenphong = tenphong;
             this.loaiphong = loaiphong;
@@ -39,7 +37,7 @@ namespace Hotel_Management_System_Winforrm
             this.quoctich = quoctich;
             this.ngayden = ngayden;
             this.ngaydi = ngaydi;
-            this.tienphaitra = tienphaitra;
+            this.tienphong = tienphong;
         }
 
         public string Tenphong { get => tenphong; set => tenphong = value; }
@@ -53,6 +51,6 @@ namespace Hotel_Management_System_Winforrm
         public string Quoctich { get => quoctich; set => quoctich = value; }
         public DateTime Ngayden { get => ngayden; set => ngayden = value; }
         public DateTime Ngaydi { get => ngaydi; set => ngaydi = value; }
-        public double Tienphaitra { get => tienphaitra; set => tienphaitra = value; }
+        public float Tienphong { get => tienphong; set => tienphong = value; }
     }
 }

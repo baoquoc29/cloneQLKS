@@ -17,17 +17,26 @@ namespace Hotel_Management_System_Winforrm
             InitializeComponent();
         }
         QuanLyTaiKhoan ql = new QuanLyTaiKhoan();
+      
+
+        private void QuenMatKhau_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btn_RePass_Click(object sender, EventArgs e)
         {
             string sdt = txtRePassWord.Text;
-            if(sdt == String.Empty) {
+            if (sdt == String.Empty)
+            {
                 MessageBox.Show("Vui Lòng Nhập Sdt", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
             else
             {
                 string query = "select * from DangNhap  where sdt = '" + sdt + "'";
-                if(ql.TaiKhoan(query).Count != 0) {
-                    label3.Text = "Tên Tài Khoản: " + ql.TaiKhoan(query)[0].Tentaikhoan + " Mật Khẩu: " + ql.TaiKhoan(query)[0].Matkhau;
+                if (ql.Account(query).Count != 0)
+                {
+                    label3.Text = "Tên Tài Khoản: " + ql.Account(query)[0].Tentaikhoan + " Mật Khẩu: " + ql.Account(query)[0].Matkhau;
                 }
                 else
                 {

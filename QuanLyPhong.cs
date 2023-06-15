@@ -16,7 +16,7 @@ namespace Hotel_Management_System_Winforrm
         public DataTable ThongTinNhanVien()
         {
             dataTable = new DataTable();
-            string query = "select phong as 'Phòng' , loaiphong as 'Loại Phòng' , mota as 'Mô Tả' , s0nguoitoida as 'Số Người' , trangthai as 'Trạng Thái' , giaphong as 'Giá Phòng' from phong";
+            string query = "select * from phong";
             using (SqlConnection sqlConnection = Connection.getConnection())
             {
                 sqlConnection.Open();
@@ -96,7 +96,7 @@ namespace Hotel_Management_System_Winforrm
 
         public DataTable TimKiem(string truongtimkiem, string giatritimkiem)
         {
-            string query = "select phong as 'Phòng' , loaiphong as 'Loại Phòng' , mota as 'Mô Tả' , s0nguoitoida as 'Số Người' , trangthai as 'Trạng Thái' , giaphong as 'Giá Phòng' from phong where " + truongtimkiem + " like '%" + giatritimkiem + "%'";
+            string query = "select * from Phong where " + truongtimkiem + " like '%" + giatritimkiem + "%'";
             using (SqlConnection sqlConnection = Connection.getConnection())
             {
                 sqlConnection.Open();

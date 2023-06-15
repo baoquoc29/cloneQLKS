@@ -270,7 +270,7 @@ namespace Hotel_Management_System_Winforrm
                 txtTienDatCoc_DatPhong.ForeColor = Color.Black;
                 tiendatcoc = Convert.ToDouble(txtTienDatCoc_DatPhong.Text);
                 double tienconlai = Convert.ToDouble(txtGiaPhong_DatPhong.Text) - tiendatcoc;
-                txtTienPhaiTra_DatPhong.Text = tienconlai.ToString();
+                txtTienPhaiTra_DatPhong.Text = tienconlai >= 0 ? tienconlai.ToString() : "0";
             }
         }
 
@@ -312,7 +312,7 @@ namespace Hotel_Management_System_Winforrm
                 if (songuoio[i] < '0' || songuoio[i] > '9')
                     return false;
             }
-            return Convert.ToInt32(songuoio) > 0 && Convert.ToInt32(songuoio) <= songuoitoda;
+            return Convert.ToInt32(songuoio) >= 1 && Convert.ToInt32(songuoio) <= songuoitoda;
         }
 
         private void txtSoNguoiO_DatPhong_TextChanged(object sender, EventArgs e)
@@ -372,9 +372,6 @@ namespace Hotel_Management_System_Winforrm
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
 
-        }
     }
 }

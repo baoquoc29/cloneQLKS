@@ -8,7 +8,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Hotel_Management_System_Winforrm
 {
@@ -25,7 +24,7 @@ namespace Hotel_Management_System_Winforrm
         }
         private void btndmk_Click(object sender, EventArgs e)
         {
-            string mkcu = txtPasswordOld.Text;  
+            string mkcu = txtPasswordOld.Text;
             string mkmoi = txtPasswordNew.Text;
             string tentk = txtUsername.Text;
             string remk = txtPassWordNewRw.Text;
@@ -33,17 +32,19 @@ namespace Hotel_Management_System_Winforrm
             {
                 MessageBox.Show("Vui Lòng Nhập Đúng Thông Tin Yêu Cầu Dộ Dài 6-24 Kí Tự", "Cảnh Báo Sai Thông Tin", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
-                if (tk.TaiKhoan("Select * from DangNhap where taikhoan = '" + tentk + "'").Count() == 0)
+            if (tk.Account("Select * from DangNhap where taikhoan = '" + tentk + "'").Count() == 0)
             {
                 MessageBox.Show("Tên Tài Khoản Không Tồn Tại Trong Hệ Thống", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;
             }
-            if (!mkmoi.Equals(remk)) {
-                MessageBox.Show("2 Mật Khẩu Không Trùng Khớp","Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (!mkmoi.Equals(remk))
+            {
+                MessageBox.Show("2 Mật Khẩu Không Trùng Khớp", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (tk.Update(mkmoi, tentk, mkcu)){
+            if (tk.Update(mkmoi, tentk, mkcu))
+            {
                 MessageBox.Show("Đã Đổi Mật Khẩu Thành Công");
             }
             else
